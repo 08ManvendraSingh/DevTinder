@@ -1,16 +1,16 @@
 {
-    "version" : 2,
-    "name" : "DevTinder",
-    "builds" : [
+    "version": 2,
+    "name": "DevTinder",
+    "builds": [
         {
-            "src" : "./src/app.js",
-            "use" : "@vercel/node"
+            "src": "src/app.js",
+            "use": "@vercel/node"
         }
     ],
-    "routes" : [
+    "routes": [
         {
-            "src" : "/(.*)",
-            "dest" : "/"
+            "src": "/(.*)",
+            "dest": "src/app.js"
         }
     ]
-}  
+}
