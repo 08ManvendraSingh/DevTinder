@@ -1,6 +1,6 @@
 {
     "version" : 2,
-    "name" : "",
+    "name" : "DevTinder",
     "builds" : [
         {
             "src" : "../src/app.js",
