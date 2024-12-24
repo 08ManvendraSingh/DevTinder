@@ -17,6 +17,14 @@ app.use(cors({
   origin:process.env.FRONTEND_URL,
   credentials:true,
 }));
+
+app.get("/",(request,response)=>{
+  ///server to client
+  response.json({
+      message : "Server is running " + port
+  })
+})
+
 app.use('/',authRouter);
 app.use('/',profileRouter);
 app.use('/',userRouter);
