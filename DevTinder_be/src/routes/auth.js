@@ -97,9 +97,13 @@ authRouter.post("/login", async (req, res) => {
       }
     );
 
-    console.log('token',token);
+    console.log("token", token);
 
-    res.cookie("token", token);
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "None",
+    });
 
     res.status(200).json({
       message: "Login successfully",
