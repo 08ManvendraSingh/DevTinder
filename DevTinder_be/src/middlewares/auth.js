@@ -3,6 +3,7 @@ const User = require("../models/user");
 
 const userAuth = async (req, res, next) => {
   try {
+    console.log("Cookies:", req.cookies); // Log cookies
     const { token } = req.cookies;
     if (!token) {
       return res.status(401).json({
@@ -12,7 +13,9 @@ const userAuth = async (req, res, next) => {
       });
     }
 
+
     const isValidToken = await jwt.verify(token, process.env.JWT_SECRET_KEY);
+    console.log("Decoded Token:", decoded); // Log decoded token
     if (!isValidToken) {
       return res.status(401).json({
         message: "Invalid Token",
