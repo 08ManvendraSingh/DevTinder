@@ -97,6 +97,8 @@ authRouter.post("/login", async (req, res) => {
       }
     );
 
+    console.log('token',token);
+
     res.cookie("token", token);
 
     res.status(200).json({
